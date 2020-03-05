@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.elias.exception.RestException;
 import br.com.elias.model.City;
@@ -14,6 +15,7 @@ import br.com.elias.repository.ICityRepository;
 import br.com.elias.repository.IClientRepository;
 import br.com.elias.service.IClientService;
 
+@Service
 public class ClientServiceImpl implements IClientService{
 	
 	private static final String MESSAGE_REQUIRED_ID_CITY = "The city should be have a id";

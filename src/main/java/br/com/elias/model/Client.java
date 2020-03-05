@@ -10,6 +10,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Document(collection = "compasso")
 public class Client {
 	
@@ -18,14 +20,15 @@ public class Client {
 	@NotBlank(message = "The full name can't be empty")
 	@NotNull(message = "The full name can't be null")
 	private String name;
-	@NotBlank(message = "The gender can't be empty")
-	@NotNull(message = "The gender can't be null")
+	//@NotBlank(message = "The gender can't be empty")
+	//@NotNull(message = "The gender can't be null")
 	private String gender;
 	@Past(message = "The birthday can't be a future date")
-	@NotNull(message = "The birthday can't be null")
+	//@NotNull(message = "The birthday can't be null")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	private Date birthday;
-	@NotBlank(message = "The gender can't be empty")
-	@NotNull(message = "The gender can't be null")
+	//@NotBlank(message = "The gender can't be empty")
+	//@NotNull(message = "The gender can't be null")
 	private int age;
 	@NotNull(message = "The city cant'be be null")
 	@DBRef
@@ -60,5 +63,11 @@ public class Client {
 	}
 	public void setCity(City city) {
 		this.city = city;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 }
