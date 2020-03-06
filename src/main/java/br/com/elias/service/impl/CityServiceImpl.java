@@ -1,9 +1,10 @@
 package br.com.elias.service.impl;
 
-import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.elias.model.City;
 import br.com.elias.repository.ICityRepository;
@@ -22,13 +23,13 @@ public class CityServiceImpl implements ICityService {
 	}
 
 	@Override
-	public City findByName(String name) {
-		return cityRepository.findByName(name).get();
+	public List<City> findByName(String name) {
+		return cityRepository.findByName(name);
 	}
 
 	@Override
-	public City findByState(String state) {
-		return cityRepository.findByState(state).get();
+	public List<City> findByState(String state) {
+		return cityRepository.findByState(state);
 	}
 
 }

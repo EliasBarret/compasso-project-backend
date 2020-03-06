@@ -2,6 +2,8 @@ package br.com.elias.controller;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -27,10 +29,12 @@ public class CityControllerTest {
 
 	@MockBean
 	private ICityService cityService;
+	
+	private List<City> mockCity; 
 
 	@Test
 	public void insertCity() throws Exception {
-		City mockCity = new City( "Olinda", "PE");
+		City mockCity = new City( "Recife", "PE");
 		Mockito.when(cityService.save(Mockito.any(City.class))).thenReturn(mockCity);
 		
 		mockMvc.perform( MockMvcRequestBuilders
@@ -43,10 +47,8 @@ public class CityControllerTest {
 	
 	@Test
 	public void getByName() throws Exception {
-		City mockCity = new City("Recife", "PE");
 		
 		Mockito.when(cityService.findByName(Mockito.anyString())).thenReturn(mockCity);
-		Mockito.when(cityService.findByState(Mockito.anyString())).thenReturn(mockCity);
 		
 		mockMvc.perform(MockMvcRequestBuilders
 				.get("/city")
@@ -58,18 +60,16 @@ public class CityControllerTest {
 	
 	@Test
 	public void getByState() throws Exception {
-		City mockCity = new City("Olinda", "PE");
 		
 		Mockito.when(cityService.findByState(Mockito.anyString())).thenReturn(mockCity);
 		
 		mockMvc.perform(MockMvcRequestBuilders
 				.get("/city")
-				.param("state", "Recife")
+				.param("state", "PE")
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
 
 	}
-
 	
 	private String asJsonString(final Object obj) {
 	    try {

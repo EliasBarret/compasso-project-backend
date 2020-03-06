@@ -1,5 +1,7 @@
 package br.com.elias.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +31,10 @@ public class CityController {
 	}
 
 	@GetMapping
-	public ResponseEntity<City> getCityByNameOrState(@RequestParam(value = "name", required = false) String name,
+	public ResponseEntity<List<City>> getCityByNameOrState(@RequestParam(value = "name", required = false) String name,
 													  @RequestParam(value = "state", required = false) String state) {
-		City city = new City();
-
+		List<City> city = null;
+		
 		if (name != null) {
 			city = cityService.findByName(name);
 		} else if (state != null) {

@@ -36,6 +36,26 @@ Considerando:
 * localhost:8080/client
 * localhost:8080/city
 
+#### Exemplos
+
+* Post - localhost:8080/city
+{
+    "name":"Goiana",
+    "state":"PE"
+}
+* Post - localhost:8080/client
+{
+	"name":"Lorem Ipsum",
+	"gender":"Masculino",
+	"birthday":"10-12-1989",
+	"age": 31,
+	"city":{
+			"id": "5e6260c43f7a93765c7f1d5d",
+    	  	"name": "Goiana",
+			"state": "PE" 
+	       }
+}
+
 ## Autor
 
 * **Elias Barreto** - *Projeto BackEnd REST/API* - [@eliasbarret](https://github.com/eliasbarret)
