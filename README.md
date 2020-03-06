@@ -1,8 +1,8 @@
 # Desafio Back-End
 
-Construcao de uma apiRest que contemple um cenário de cadastro de cliente e cidade.
+Construção de um modelo de aplicação REST/API que contemple um cenário de cadastro de cliente e cidade.
 
-### Técnologias Envolidas
+### Técnologias Envolvidas
 
 * Java 8
 * MongoDB
@@ -10,13 +10,13 @@ Construcao de uma apiRest que contemple um cenário de cadastro de cliente e cid
 * JUnit
 * Git
 
-### Ferramenta Utilizada
+### Ferramentas Utilizada
 
 * Eclipse
 * Bash
 * Git
 
-## Cenário
+### Cenário
 
 * Cadastro cidade
 * Cadastro cliente
@@ -31,7 +31,11 @@ Considerando:
 * Cidades: nome e estado
 * Cliente: nome completo, sexo, data de nascimento, idade e cidade onde mora.
 
+### EndPoints
+
+* localhost:8080/client
+* localhost:8080/city
+
 ## Autor
 
-* **Elias Barreto** - *Projeto BackEnd ApiRest* - [@eliasbarret](https://github.com/eliasbarret)
-
+* **Elias Barreto** - *Projeto BackEnd REST/API* - [@eliasbarret](https://github.com/eliasbarret)
