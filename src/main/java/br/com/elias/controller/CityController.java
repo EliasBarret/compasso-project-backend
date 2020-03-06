@@ -24,16 +24,13 @@ public class CityController {
 
 	@PostMapping
 	public ResponseEntity<City> saveCity(@Valid @RequestBody City city) {
-
 		city = cityService.save(city);
-
 		return new ResponseEntity<>(city, HttpStatus.CREATED);
 	}
 
 	@GetMapping
 	public ResponseEntity<City> getCityByNameOrState(@RequestParam(value = "name", required = false) String name,
-			@RequestParam(value = "state", required = false) String state) {
-
+													  @RequestParam(value = "state", required = false) String state) {
 		City city = new City();
 
 		if (name != null) {
@@ -41,8 +38,6 @@ public class CityController {
 		} else if (state != null) {
 			city = cityService.findByState(state);
 		}
-
 		return new ResponseEntity<>(city, HttpStatus.OK);
 	}
-
 }

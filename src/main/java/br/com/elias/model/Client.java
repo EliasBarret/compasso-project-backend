@@ -20,17 +20,15 @@ public class Client {
 	@NotBlank(message = "The full name can't be empty")
 	@NotNull(message = "The full name can't be null")
 	private String name;
-	//@NotBlank(message = "The gender can't be empty")
-	//@NotNull(message = "The gender can't be null")
+	@NotBlank(message = "The full name can't be empty")
+	@NotNull(message = "The full name can't be null")
 	private String gender;
 	@Past(message = "The birthday can't be a future date")
-	//@NotNull(message = "The birthday can't be null")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	private Date birthday;
-	//@NotBlank(message = "The gender can't be empty")
-	//@NotNull(message = "The gender can't be null")
+	@NotNull(message = "The full name can't be null")
 	private int age;
-	@NotNull(message = "The city cant'be be null")
+	@NotNull(message = "The full name can't be null")
 	@DBRef
     private City city;
 	

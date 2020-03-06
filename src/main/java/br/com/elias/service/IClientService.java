@@ -2,8 +2,6 @@ package br.com.elias.service;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import br.com.elias.model.Client;
 
 public interface IClientService {
@@ -17,5 +15,4 @@ public interface IClientService {
 	public void delete(String id);
 
 	public Client update(String id, Client client);
-
 }
