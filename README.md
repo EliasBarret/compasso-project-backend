@@ -36,14 +36,25 @@ Considerando:
 * localhost:8080/client
 * localhost:8080/city
 
+#### Configuração BD
+
+* Mongo DB
+```
+ use compasso-processamento
+ bd.createCollection("compasso")
+```
+
 #### Exemplos
 
 * Post - localhost:8080/city
+```
 {
     "name":"Goiana",
     "state":"PE"
 }
+```
 * Post - localhost:8080/client
+```
 {
 	"name":"Lorem Ipsum",
 	"gender":"Masculino",
@@ -55,7 +66,7 @@ Considerando:
 			"state": "PE" 
 	       }
 }
-
+```
 ## Autor
 
-* **Elias Barreto** - *Projeto BackEnd REST/API* - [@eliasbarret](https://github.com/eliasbarret)
+* **Elias Barreto** - *Projeto_BackEnd_REST/API* - [@eliasbarret](https://github.com/eliasbarret)
