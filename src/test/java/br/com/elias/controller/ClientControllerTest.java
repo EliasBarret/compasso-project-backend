@@ -34,12 +34,13 @@ public class ClientControllerTest {
 	private IClientService clientService;
 	
 	@Test
-	public void saveClient() throws Exception {
+	public void insertClient() throws Exception {
 		Client clientMock = new Client();
 		
 		clientMock.setName("Elias Barreto");
 		clientMock.setGender("Masculino");
 		clientMock.setBirthday(new Date());
+		clientMock.setAge(25);
 		clientMock.setCity(new City( "Olinda", "PE"));
 		
 		Mockito.when(clientService.insert(Mockito.any(Client.class))).thenReturn(clientMock);
@@ -55,7 +56,7 @@ public class ClientControllerTest {
 	
 	
 	@Test
-	public void updateNameOfClient() throws Exception {
+	public void updateNameClient() throws Exception {
 		Client clientMock = new Client();
 		
 		clientMock.setName("Elias Barreto Ferreira Filho");

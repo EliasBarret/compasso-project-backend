@@ -30,7 +30,7 @@ public class CityControllerTest {
 
 	@Test
 	public void insertCity() throws Exception {
-		City mockCity = new City( "Recife", "PE");
+		City mockCity = new City( "Olinda", "PE");
 		Mockito.when(cityService.save(Mockito.any(City.class))).thenReturn(mockCity);
 		
 		mockMvc.perform( MockMvcRequestBuilders
@@ -58,7 +58,7 @@ public class CityControllerTest {
 	
 	@Test
 	public void getByState() throws Exception {
-		City mockCity = new City("Recife", "PE");
+		City mockCity = new City("Olinda", "PE");
 		
 		Mockito.when(cityService.findByState(Mockito.anyString())).thenReturn(mockCity);
 		
