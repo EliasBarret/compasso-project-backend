@@ -33,8 +33,15 @@ Considerando:
 
 ### EndPoints
 
-* localhost:8080/client
-* localhost:8080/city
+```
+* Get - localhost:8080/city/?name=Olinda
+* Get - localhost:8080/client/?name=Elias
+* Get - localhost:8080/client/[id]
+* Post - localhost:8080/city
+* Post - localhost:8080/client
+* Put - localhost:8080/client/[id]
+* Delete - localhost:8080/client/[id]
+```
 
 #### Configuração BD
 
@@ -46,14 +53,13 @@ Considerando:
 
 #### Exemplos
 
-* Post - localhost:8080/city
 ```
 {
-    "name":"Goiana",
+    "name":"Olinda",
     "state":"PE"
 }
 ```
-* Post - localhost:8080/client
+
 ```
 {
 	"name":"Lorem Ipsum",
@@ -62,11 +68,12 @@ Considerando:
 	"age": 31,
 	"city":{
 			"id": "5e6260c43f7a93765c7f1d5d",
-    	  	"name": "Goiana",
+    	  	"name": "Olinda",
 			"state": "PE" 
 	       }
 }
 ```
-## Autor
+
+### Autor
 
 * **Elias Barreto** - *Projeto_BackEnd_REST/API* - [@eliasbarret](https://github.com/eliasbarret)
